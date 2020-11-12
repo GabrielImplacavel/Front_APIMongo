@@ -21,7 +21,7 @@ import {
     const toggle = () => setIsOpen(!isOpen);
   
     return (
-        <button>a</button>
+        <button>Teste</button>
     );
   };
 
