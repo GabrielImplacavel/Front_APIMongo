@@ -1,28 +1,50 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText
-  } from 'reactstrap';
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText,
+  Container
+} from 'reactstrap';
 
 
-  const Menu = (props) => {
-    const [isOpen, setIsOpen] = useState(false);
-  
-    const toggle = () => setIsOpen(!isOpen);
-  
-    return (
-        <button>Teste</button>
-    );
-  };
+const Menu = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  export default Menu;
+  const toggle = () => setIsOpen(!isOpen);
+
+  return (
+    <div>
+      <Navbar color="dark" dark expand="md" className="fixed-top">
+        <Container>
+          <NavbarBrand href="/">Juliano</NavbarBrand>
+          <NavbarToggler onClick={toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            <Nav className="mr-auto" navbar>
+              <NavItem>
+                <NavLink href="/">Index</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/sobre-empresa">Sobre empresa</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/contato">Contato</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Container>
+      </Navbar>
+    </div>
+
+  );
+};
+
+export default Menu;
